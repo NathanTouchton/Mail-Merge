@@ -15,7 +15,6 @@ for name in names_list:
     with open("starting_letter.txt", mode="r") as file:
         contents = file.read()
         letter = open(f"./finished_letters/Letter for {name}.txt", mode="w+")
-        # letter.write(contents)
         modded_letter_text = contents.replace("[name]", name)
         letter.write(modded_letter_text)
         letter.close()
