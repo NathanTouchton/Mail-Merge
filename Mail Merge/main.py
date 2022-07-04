@@ -6,3 +6,16 @@
 #Hint1: This method will help you: https://www.w3schools.com/python/ref_file_readlines.asp
 #Hint2: This method will also help you: https://www.w3schools.com/python/ref_string_replace.asp
 #Hint3: THis method will help you: https://www.w3schools.com/python/ref_string_strip.asp
+
+with open("names.txt", mode="r") as file:
+    names_list = file.readlines()
+
+
+for name in names_list:
+    with open("starting_letter.txt", mode="r") as file:
+        contents = file.read()
+        letter = open(f"./finished_letters/Letter for {name}.txt", mode="w+")
+        # letter.write(contents)
+        modded_letter_text = contents.replace("[name]", name)
+        letter.write(modded_letter_text)
+        letter.close()
